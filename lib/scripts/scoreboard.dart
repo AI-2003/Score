@@ -438,7 +438,12 @@ class ScoreBoardState extends State<ScoreBoard> {
                                           setState(() {
                                             _team._color = color;
                                             if(online){
-                                              root.child(matchNumber).child("Team"+_team._number.toString()).child("Color").set(_team._color.toString());
+                                              root.child(matchNumber).child("Team"+_team._number.toString()).child("Color").set({
+                                                'R': color._color.red.toString(),
+                                                'G': color._color.green.toString(),
+                                                'B': color._color.blue.toString(),
+                                                'A': color._color.alpha.toString(),
+                                              });
                                             }
                                           });
                                         },
@@ -1205,8 +1210,8 @@ class ScoreBoardState extends State<ScoreBoard> {
                                        _team1._align = Alignment.centerLeft;
                                      }
                                      if(online){
-                                       root.child(matchNumber).child("Team1").child("Align").set(_team1._align.toString());
-                                       root.child(matchNumber).child("Team2").child("Align").set(_team2._align.toString());
+                                       root.child(matchNumber).child("Team1").child("Align").set(_team1._align == Alignment.centerLeft ? '1' : '2');
+                                       root.child(matchNumber).child("Team2").child("Align").set(_team2._align == Alignment.centerLeft ? '1' : '2');
                                      }
                                    });
                                  },
