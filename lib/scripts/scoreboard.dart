@@ -439,10 +439,10 @@ class ScoreBoardState extends State<ScoreBoard> {
                                             _team._color = color;
                                             if(online){
                                               root.child(matchNumber).child("Team"+_team._number.toString()).child("Color").set({
-                                                'R': color._color.red.toString(),
-                                                'G': color._color.green.toString(),
-                                                'B': color._color.blue.toString(),
-                                                'A': color._color.alpha.toString(),
+                                                'R': color.red.toString(),
+                                                'G': color.green.toString(),
+                                                'B': color.blue.toString(),
+                                                'A': color.alpha.toString(),
                                               });
                                             }
                                           });
