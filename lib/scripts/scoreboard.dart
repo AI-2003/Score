@@ -313,6 +313,7 @@ class ScoreBoardState extends State<ScoreBoard> {
       root.child(mirrorMatchNumber).child("Team2").child("Score").child("4").onValue.listen((event) {setState(() {_team2._score["4"] = int.parse(event.snapshot.value);});});
       root.child(mirrorMatchNumber).child("Team2").child("Score").child("5").onValue.listen((event) {setState(() {_team2._score["5"] = int.parse(event.snapshot.value);});});
       root.child(mirrorMatchNumber).child("Team2").child("SetsWon").onValue.listen((event) {setState(() {_team2._setsWon = int.parse(event.snapshot.value);});});
+      root.child(mirrorMatchNumber).child("GameOver").onValue.listen((event) {if(event.snapshot.value == "1"){setState(() {gameOver(_team1._score[currentSet.toString()] > _team2._score[currentSet.toString()] ? _team1 : _team2, true);});}});
     }
 
     void resetVariables() {
