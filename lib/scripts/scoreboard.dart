@@ -840,8 +840,8 @@ class ScoreBoardState extends State<ScoreBoard> {
                 _team1._align = Alignment.centerLeft;
               }
               if(online){
-                root.child(matchNumber).child("Team1").child("Align").set(_team1._align.toString());
-                root.child(matchNumber).child("Team2").child("Align").set(_team2._align.toString());
+                root.child(matchNumber).child("Team1").child("Align").set(_team1._align == Alignment.centerLeft ? '1' : '2');
+                root.child(matchNumber).child("Team2").child("Align").set(_team2._align == Alignment.centerLeft ? '1' : '2');
               }
             }
             break;
