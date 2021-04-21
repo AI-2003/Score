@@ -65,7 +65,6 @@ class GameOverState extends State<GameOver>{
     }
 
     Widget setBoard(int set){
-      print(setsWinner);
       return Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
